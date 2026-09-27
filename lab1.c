@@ -10,7 +10,7 @@ int main(){
         x = 1.0 + i*0.3;
         for (int j = 0; j <= 1; j++){
             y = 2.0 + j*0.5;
-            if (x/(y * y) < 1.0){
+            if (x/(y*y) < 1.0){
                 term1 = cos(x*x*x - sqrt(y));
                 term2 = pow(x*y*y, 1.0/3.0);
                 if (term1 > term2){
@@ -20,8 +20,6 @@ int main(){
                 }
             } else{
                 U = log(y*y - x);
-                term1 = U;
-                term2 = U;
             }
             printf("x:%.2f | y:%.2f | U:%7.4f \n", x, y, U); 
             result *= U;
