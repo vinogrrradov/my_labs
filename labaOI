@@ -1,24 +1,14 @@
 #!/bin/bash
-
-main(){
-	arr=("$@")
-	for ((i=0; i<$#; i++))
+arr=("$@")
+for ((i=0; i<$#; i++))
 	do
 		for ((j=i+1; j<$#; j++))
 		do
-			if [ "${arr[i]}" == "${arr[j]}" ] 
+			if [ "${arr[i]}" == "${arr[j]}" ]
 			then
-				return 1
+				echo "duplicate - yes"
+				exit 0
 			fi
 		done
 	done
-	return 0 
-}
-
-if main "$@"
-then
 	echo "duplicate - no"
-else
-	echo "duplicate - yes"
-fi
-
